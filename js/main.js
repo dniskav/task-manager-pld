@@ -1,1 +1,2 @@
-
+// Global object
+window.taskManager = {};

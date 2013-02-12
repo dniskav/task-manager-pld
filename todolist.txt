@@ -1,0 +1,14 @@
+/**
+
+	TODO:
+	- Tareas [main]
+	- Agregar tarea : agregarTarea()
+	- Eliminar tarea : eliminarTarea()
+	- Resolver tarea : resolverTarea()
+	- Editar tarea : editarTarea()
+	- Actualizar tarea : actualizarTarea()
+	- Listar tareas : listarTareas()
+	- Asignar usuario : asignarUsuario()
+	- Editar usuario : editarUsuario()
+
+**/
