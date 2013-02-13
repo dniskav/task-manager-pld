@@ -45,6 +45,18 @@ window.userManager = {
 		//edituser += '</form>';
 
 
+		$(document.createElement("form"))
+			.attr("class","edit_form")
+			.submit(function(e){ 
+					e.preventDefault();
+					alert("click"); 
+				})
+			.appendTo("div.view_user");
+
+		$(document.createElement("input"))
+			.attr({class,"edit_form",type,"edit_form"})
+			.appendTo("form.edit_form");
+
 		// var divedit = document.createElement('div');
 		// divedit.setAttribute("class", "edit_form"); 
 		
