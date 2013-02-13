@@ -32,8 +32,15 @@ TASKMANAGER = {
          */
         deleteTask: function (task) {
             "use strict";
-            
-            console.log("Task deleted");
+            if (TASKMANAGER.tasksArray.length > 0) {
+                for ( var i = 0; i<TASKMANAGER.tasksArray.length; i++) {
+                    if (TASKMANAGER.tasksArray[i].id === 2) {
+                        console.log("Found in " + i);
+                    } else {
+                        console.log("Not found in " +  i);
+                    }
+                }
+            }
         },
 
         /**
@@ -56,6 +63,27 @@ var userObject = {
 
 // Dummy object. Just for testing
 var taskOptions = {
+    'id': 1,
+    'name' : 'Finish my tutorial',
+    'priority' : 10,
+    'description' : 'I must finish my tasks!',
+    'user' : userObject,
+    'state' : 'Open',
+    'due_date' : '01/03/2013' // DD/MM/YYYY
+};
+
+var taskOptions2 = {
+    'id': 2,
+    'name' : 'Finish my tutorial',
+    'priority' : 10,
+    'description' : 'I must finish my tasks!',
+    'user' : userObject,
+    'state' : 'Open',
+    'due_date' : '01/03/2013' // DD/MM/YYYY
+};
+
+var taskOptions3 = {
+    'id': 3,
     'name' : 'Finish my tutorial',
     'priority' : 10,
     'description' : 'I must finish my tasks!',
@@ -66,3 +94,5 @@ var taskOptions = {
 
 // Initialize myTask
 var myTask = new TASKMANAGER.Task.addTask(taskOptions);
+var myTask2 = new TASKMANAGER.Task.addTask(taskOptions2);
+var myTask2 = new TASKMANAGER.Task.addTask(taskOptions3);
