@@ -44,14 +44,20 @@ window.userManager = {
 		edituser += '</div>';
 		//edituser += '</form>';
 
-		
-		var divedit = document.createElement('div');
-		divedit.className = "edit_form";
-		
-		var buttomedit = document.createElement('button');
-		buttomedit.className = "save_user";
 
-		document.getElementById("view_user").appendChild(buttomedit);
+		// var divedit = document.createElement('div');
+		// divedit.setAttribute("class", "edit_form"); 
+		
+		// var buttomedit = document.createElement('button');
+		// buttomedit.setAttribute("value", "send"); 
+		// buttomedit.setAttribute("class", "save_user"); 
+		// var t=document.createTextNode("CLICK ME");
+		// buttomedit.appendChild(t);
+
+		// divedit.appendChild(buttomedit);
+		// document.getElementById("view_user").appendChild(divedit);
+		//$(document.body).append('<div class="mie">asd</div>');
+		$(document.createElement("button")).attr("class","save_user").text("Test Link 2").click(function(){ alert("click"); }).appendTo("div.view_user");
 	},
 	saveEditUser: function(userid){
 		// LLAMADO AJAX A LA DB PARA GUARDAR LOS DATOS
