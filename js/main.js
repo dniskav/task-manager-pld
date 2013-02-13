@@ -46,14 +46,21 @@ TASKMANAGER = {
                     }
                 }
             }
+            return false;
         },
 
         /**
          * Set a task a resolved
+         * @param {Object} task Task object to update
          */
-        resolveTask: function () {
+        resolveTask: function (task) {
             "use strict";
-
+            console.log(task.state);
+            if (task.state === "Open") {
+                task.state = "Resolved";
+            } else {
+                return false;
+            }
         }
     }
 };
