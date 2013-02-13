@@ -1,3 +1,5 @@
+// JSLint now support foo++
+/*jslint plusplus: true */
 // Check if the TASKMANAGER namespace exists
 var TASKMANAGER = TASKMANAGER || {};
 
@@ -28,16 +30,19 @@ TASKMANAGER = {
 
         /**
          * Delete an specific task.
-         * @param  {Object} task Task to delete
+         * @param  {Object} Task to delete
+         * @return {Boolean} Did the method delete the object from the array.
          */
         deleteTask: function (task) {
             "use strict";
-            if (TASKMANAGER.tasksArray.length > 0) {
-                for ( var i = 0; i<TASKMANAGER.tasksArray.length; i++) {
-                    if (TASKMANAGER.tasksArray[i].id === 2) {
-                        console.log("Found in " + i);
-                    } else {
-                        console.log("Not found in " +  i);
+            var i = 0,
+                tasksArray = TASKMANAGER.tasksArray;
+
+            if (tasksArray.length > 0) {
+                for (i; i < tasksArray.length; i++) {
+                    if (tasksArray[i].id === task.id) {
+                        tasksArray.splice(i, 1);
+                        return true;
                     }
                 }
             }
