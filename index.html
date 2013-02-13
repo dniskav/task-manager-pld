@@ -17,12 +17,42 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        
+        <div class="user">
+            <div class="nav_users" style="float:left; border: solid 1px black;">
+                <ul class="users_list">
+                </ul>  
+            </div>
+            <div class="view_user" id="view_user" style="float:left; border: solid 1px red;">
+                USER VIEW
+            </div>
+        </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".edituser").click( function(){
+                var userid = $(this).val();
+                userManager.editUser(userid);
+            });
+            
+            $('.save_user').click(function() {
+              alert("asdas");
+              // alert($(".edit_form").serialize());
+              // return false;
+            });
+            // $('.edit_form .save_user').on('click', function(event) {
+            //     alert("mmmm");
+            //    event.preventDefault();
+            //   // alert($(this).serialize());
+            //   // return false;
+            // });
+           
+
+        });
+        </script>
 
     </body>
 </html>

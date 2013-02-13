@@ -11,7 +11,7 @@
 		- addUser()
 		- editUser()
 
-	- User
+	- User (Name, id)
 		- addUser()
 		- deleteUser()
 		- editUser()
