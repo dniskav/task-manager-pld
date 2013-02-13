@@ -93,7 +93,23 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#workspace {
+  background: none repeat scroll 0 0 #EEEEEE;
+  display: block;
+  height: 500px;
+  margin: 0 auto;
+  padding-top: 5%;
+  width: 85%;
+}
 
+.user-pipe {
+  background: none repeat scroll 0 0 rgba(255, 0, 0, 0.5);
+  display: inline-block;
+  height: 70%;
+  margin-right: 5%;
+  vertical-align: baseline;
+  width: 7%;
+}
 
 
 

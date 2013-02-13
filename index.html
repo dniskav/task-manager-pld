@@ -18,11 +18,37 @@
     </head>
     <body>
         
+        <div class="controls">
+            <a href="#" id="set-user">Create user</a>
+            <input type="text" id="user-name">
+            <a href="#" id="add-task-to-user">Add task to</a>
+        </div>
+        <div id="workspace">
+
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+            jsonData = {
+                container: workspace
+            }
+            
+            taskManager.init(jsonData);
+            
+            btnAddUsr = document.getElementById('set-user');
+            userName = document.getElementById('user-name');
+            
+            
+            btnAddUsr.onclick = function(e){
+                
+                taskManager.user.add(userName.value);
+                return false;
+            }
+            
+        </script>
 
     </body>
 </html>
