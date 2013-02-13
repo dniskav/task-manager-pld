@@ -1,7 +1,6 @@
 // Global object
 window.taskManager = {
     ids: 0,
-    tUsers: [],
     container: null,
     /**
      *
@@ -38,19 +37,28 @@ window.taskManager = {
     },
     task: {
         //get & sets
-    /**
-     *
-     */
+        /**
+         * Define Task properties
+         * @type {object}
+         */
+        tasksData : {
+            tIds : [],
+            tName : [],
+            tState : [],
+            tUser : []
+        },
         getUser: function(id) {
 
             return taskManager.tUsers[id];
 
         },
-    /**
-     *
-     */
+        /**
+         *add a task to user
+         *@param {object} user
+         *@return {bolean}
+         */
         setUser: function(user) {
-
+            
         },
         //other methodos
 
@@ -75,8 +83,7 @@ window.taskManager = {
 
     },
     user:{
-        
-        
+        tUsers: [],
         /**
          * add user to scope
          * @param {integer} user
@@ -87,14 +94,15 @@ window.taskManager = {
 
             objUser = {
                 id: current_id,
-                name: user
+                name: user,
+                tasks : {}
             }
 
-            taskManager.tUsers[current_id] = objUser;
+            this.tUsers[current_id] = objUser;
 
             taskManager.ids++;
 
-            if (typeof taskManager.tUsers[current_id] != 'undefined') {
+            if (typeof this.tUsers[current_id] != 'undefined') {
 
                 return current_id;
             } else {
@@ -107,7 +115,7 @@ window.taskManager = {
          *@return {object} user
          **/
         getUser : function(id){
-            return taskManager.tUsers[id];
+            return this.tUsers[id];
         },
         /**
          * add user to a enviroment
