@@ -23,6 +23,7 @@ TASKMANAGER = {
             "use strict";
             if (!taskOptions) {
                 alert('Please set parameters');
+                return false;
             }
 
             TASKMANAGER.tasksArray.push(taskOptions);
@@ -46,14 +47,21 @@ TASKMANAGER = {
                     }
                 }
             }
+            return false;
         },
 
         /**
          * Set a task a resolved
+         * @param {Object} task Task object to update
          */
-        resolveTask: function () {
+        resolveTask: function (task) {
             "use strict";
-
+            console.log(task.state);
+            if (task.state === "Open") {
+                task.state = "Resolved";
+            } else {
+                return false;
+            }
         }
     }
 };
